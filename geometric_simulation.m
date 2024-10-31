@@ -66,7 +66,7 @@ control_uav1.sigma_y_array = zeros(3,8,control_uav1.N);
 control_uav2 = control_uav1;
 % control_uav2.theta = [0;0;0.05;0.06;0.07;-0.005;-0.006;0.004];
 %% create trajectory
-traj_array = zeros(12, length(uav1.t));
+%traj_array = zeros(12, length(uav1.t));
 traj = trajectory;
 
 %% create allocation matrix
@@ -136,7 +136,7 @@ for i = 2:length(uav1.t)
 
     [T_uav1, X_new_uav1] = ode45(@(t, x) uav1.dynamics( x, real_control_force_uav1), [0, dt], X0_uav1);
     
-    M_tot_uav1 = real_control_force_uav1(2:4);
+    %M_tot_uav1 = real_control_force_uav1(2:4);
     dX_uav1 = uav1.dynamics(X0_uav1 , real_control_force_uav1);
     
      
